@@ -21,7 +21,7 @@ complete <- function(directory, id = 1:332){
     paths <- paste(currentdir, '/', files, sep='')
     result <- data.frame(id = integer(), nobs = integer())
     
-    # looping to get data
+    # looping to process data
     for(i in id){
         result[i, 1] <- i
         result[i, 2] <- sum(complete.cases(read.csv(paths[i])))

@@ -21,7 +21,7 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
     paths <- paste(currentdir, '/', files, sep='')
     data <- data.frame()
     
-    # looping to get data
+    # looping to process data
     for(i in id){
         data <- rbind(data, read.csv(paths[i]))
     }
