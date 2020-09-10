@@ -11,7 +11,7 @@ corr <- function(directory, threshold = 0){
     ## NOTE: Do not round the result!
     
     # set directory
-    currentdir <- paste(getwd(), '/', directory, '/', sep = '')
+    currentdir <- paste(getwd(), '/', directory, sep = '')
     
     # set data
     files <- as.character(list.files(currentdir))

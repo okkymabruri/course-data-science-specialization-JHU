@@ -14,7 +14,7 @@ complete <- function(directory, id = 1:332){
     ## number of complete cases
     
     # set directory
-    currentdir <- paste(getwd(), '/', directory, '/', sep = '')
+    currentdir <- paste(getwd(), '/', directory, sep = '')
     
     # set data
     files <- as.character(list.files(currentdir))
