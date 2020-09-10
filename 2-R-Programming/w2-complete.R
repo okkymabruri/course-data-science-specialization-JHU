@@ -19,20 +19,41 @@ complete <- function(directory, id = 1:332){
     # set data
     files <- as.character(list.files(currentdir))
     paths <- paste(currentdir, '/', files, sep='')
-    result <- data.frame("id" = c(), "nobs" = c())
+    result <- data.frame(id = integer(), nobs = integer())
     
     # looping to get data
     for(i in id){
-        data <- read.csv(paths[i])
-        )
-        result <- rbind(result, countdata)
-        
+        result[i, 1] <- i
+        result[i, 2] <- sum(complete.cases(read.csv(paths[i])))
     }
-    complete.cases()
-    return(result)
+    result[complete.cases(result),]
 }
 
-setwd('/mnt/sdb2/OneDrive/Who-Am-I/Data Science-AI/course-data-science-specialization-JHU/2-R-Programming/w2-specdata/')
-data <- sum(complete.cases(read.csv('002.csv')))
+complete("w2-specdata", 1)
 
-nobs("w2-specdata", 1:10)
+##   id nobs
+## 1  1  117
+
+complete("w2-specdata", c(2, 4, 8, 10, 12))
+
+##   id nobs
+## 1  2 1041
+## 2  4  474
+## 3  8  192
+## 4 10  148
+## 5 12   96
+
+complete("w2-specdata", 30:25)
+
+##   id nobs
+## 1 30  932
+## 2 29  711
+## 3 28  475
+## 4 27  338
+## 5 26  586
+## 6 25  463
+
+complete("w2-specdata", 3)
+
+##   id nobs
+## 1  3  243
