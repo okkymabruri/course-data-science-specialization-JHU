@@ -1,4 +1,4 @@
-complete <- function(directory, id = 1:332){
+complete <- function(directory, id = 1:332) {
     ## 'director' is a character vector of length 1 indicating
     ## the location of the CSV files
     
@@ -18,15 +18,15 @@ complete <- function(directory, id = 1:332){
     
     # set data
     files <- as.character(list.files(currentdir))
-    paths <- paste(currentdir, '/', files, sep='')
+    paths <- paste(currentdir, '/', files, sep = '')
     result <- data.frame(id = integer(), nobs = integer())
     
     # looping to process data
-    for(i in id){
+    for (i in id) {
         result[i, 1] <- i
         result[i, 2] <- sum(complete.cases(read.csv(paths[i])))
     }
-    result[complete.cases(result),]
+    result[complete.cases(result), ]
 }
 
 complete("w2-specdata", 1)

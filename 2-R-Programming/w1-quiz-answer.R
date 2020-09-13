@@ -8,7 +8,7 @@ class(x)
 x <- c(4, "a", TRUE)
 
 #6
-x <- c(1,3, 5)
+x <- c(1, 3, 5)
 y <- c(3, 2, 10)
 rbind(x, y)
 
@@ -39,10 +39,12 @@ airquality[47, 1:5]
 sum(is.na(airquality$Ozone))
 
 #mean without na values
-mean(airquality$Ozone, na.rm=1)
+mean(airquality$Ozone, na.rm = 1)
 
 #subset of rows of the data frame where Ozone values are above 31 and Temp values are above 90
-z <- print(subset(airquality, airquality$Ozone > 31 & airquality$Temp > 90))
+z <-
+    print(subset(airquality, airquality$Ozone > 31 &
+                     airquality$Temp > 90))
 mean(z$Solar.R)
 
 #mean of Temp when month is equal to 6
@@ -51,4 +53,4 @@ mean(z$Temp)
 
 #max of ozone when month is equal to 6
 z <- print(subset(airquality, airquality$Month == 5))
-max(z$Ozone,na.rm = 1)
+max(z$Ozone, na.rm = 1)
