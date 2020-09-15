@@ -28,14 +28,14 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
     return(mean(data[, pollutant], na.rm = TRUE))
 }
 
-pollutantmean("w2-specdata", "sulfate", 1:10)
+pollutantmean("specdata", "sulfate", 1:10)
 
 ## 4.064128
 
-pollutantmean("w2-specdata", "nitrate", 70:72)
+pollutantmean("specdata", "nitrate", 70:72)
 
 ## 1.706047
 
-pollutantmean("w2-specdata", "nitrate", 23)
+pollutantmean("specdata", "nitrate", 23)
 
 ## 1.280833
